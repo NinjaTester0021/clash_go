@@ -21,7 +21,7 @@ type ID struct {
 // newID returns an ID with given UUID.
 func newID(uuid *uuid.UUID) *ID {
 	id := &ID{UUID: uuid, CmdKey: make([]byte, IDBytesLen)}
-	md5hash := md5.New()
+	//md5hash := md5.New()
 	md5hash.Write(uuid.Bytes())
 	md5hash.Write([]byte("c48619fe-8f02-49e0-b9e9-edf763e17e21"))
 	md5hash.Sum(id.CmdKey[:0])
